@@ -1,0 +1,37 @@
+{
+    "name": "ESP-IDF",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            "USER": "dev"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.profiles.linux": {
+                    "bash": {
+                        "path": "/bin/bash",
+                        "icon": "terminal-bash"
+                    }
+                },
+                "terminal.integrated.defaultProfile.linux": "bash"
+            },
+
+            // Install relevant extensions in the dev container
+            "extensions": [
+                "twxs.cmake",
+                "ms-vscode.cpptools",
+                "ms-vscode.vscode-serial-monitor"
+            ]
+        }
+    },
+    "userEnvProbe": "loginInteractiveShell",
+    // Forward serial device to enable flash & monitor
+
+    "runArgs": [
+        "--device=/dev/ttyUSB0"
+    ],
+
+    "remoteUser": "dev"
+}
