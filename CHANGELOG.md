@@ -10,5 +10,10 @@ This is the change log. It is updated with each release and should contain the f
 [Semantic Versioning](https://semver.org/) is used to track releases. 
 
 ----
+## 0.0.2 - 2023-05-11
+### Fixed
+  - Set monitor baud rate to 115200 in VSCode settings
+
+----
 ## 0.0.1 - 2023-05-09
 Initial release of the project
