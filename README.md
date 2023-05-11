@@ -7,7 +7,7 @@ connect to a custom access point created by the ESP32.
 
 ## Why IDF and not Arduino IDE or PlatformIO
 This project uses the ESP-IDF directly and is the recommended way of doing a project like this. 
-Without going into too much detail this is not supported out-of-the-box in the standard
+This is not supported out-of-the-box in the standard
 Arduino IDE and, while possible, is [not recommended](https://docs.espressif.com/projects/arduino-esp32/en/latest/faq.html#how-to-modify-an-sdkconfig-option-in-arduino) 
 because it requires changes to the sdkconfig file. It _can_ be done in PlatformIO but, 
 again, when using the Arduino library it is non-trivial. It's actually super simple to use
@@ -55,4 +55,14 @@ Once your device has been flashed you are ready to provision it with the sample 
 With the app installed and the firmware running on your device:
 
   1. Open the provisioning app on your phone
-  1. 
+  1. On the first screen click **Provision Device**
+  1. The following screen will ask to scan a QR code. Click **I don't have a QR code**
+  1. On the *BLE Devices* screen, after a brief scan, the device **PROV_DTF** will appear in the list. Click on it.
+  1. Enter the proof of posession PIN. Unless you changed it, the default is "abcd1234"
+  1. Click **Next**
+  1. Select your WiFi network from the list. It must be a 2.4GHz network with a password
+  1. Enter your WiFi password
+  1. Click **Provision**
+
+  > **Note**
+  > If you changed the service name in main.cpp from "PROV_DTF" to something else your device will show up in the list with the name you changed it to. If you removed the "PROV_" portion you will need to change the PREFIX value in the app so it finds your device.
