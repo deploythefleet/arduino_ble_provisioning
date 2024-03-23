@@ -61,6 +61,7 @@ RUN ["dash", "-c", "\
      python3-virtualenv \
      udev \
      wget \
+     gnupg \
  && apt-get clean \
  && apt-get purge \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
