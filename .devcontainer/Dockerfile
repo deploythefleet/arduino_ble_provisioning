@@ -4,7 +4,7 @@ ARG UID=1000
 ARG USER=root
 
 # POSIX compatible (Linux/Unix) base image
-FROM debian:stable-slim
+FROM debian:bookworm-slim
 
 # Import global arguments
 ARG DEBIAN_FRONTEND
@@ -51,7 +51,6 @@ RUN ["dash", "-c", "\
      gperf \
      catch2 \
      libffi-dev \
-     libpython2.7 \
      libssl-dev \
      libusb-1.0-0 \
      nano \
@@ -59,7 +58,7 @@ RUN ["dash", "-c", "\
      python3 \
      python3-pip \
      python3-setuptools \
-     python3-venv \
+     python3-virtualenv \
      udev \
      wget \
  && apt-get clean \
