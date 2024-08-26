@@ -13,6 +13,8 @@
  * you normally would for your application.
 */
 
+#define VERSION "1.0.0"
+
 bool is_provisioned = false;
 void SysProvEvent(arduino_event_t *sys_event)
 {
@@ -75,6 +77,8 @@ void loop()
         // This code will run every time through the loop() function when provisioned. This is
         // where you would put your normal Arduino loop() logic.
         Serial.println("Connected to Wi-Fi and ready to run main application");
+        Serial.print("Version: ");
+        Serial.println(VERSION);
         delay(5000);
     }
     else
